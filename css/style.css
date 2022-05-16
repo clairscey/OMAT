@@ -1,0 +1,93 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+body{
+  background: #c7b9e5;
+  font-family: "Noto Sans", sans-serif;
+}
+header{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.headerBar{
+  display: flex;
+  height: 100px;
+  line-height: 0;
+  vertical-align: top;
+  align-items: center;
+
+}
+.center{
+  text-align: center;
+}
+nav{
+  padding: 0;
+}
+li{
+  list-style-type: none;
+  display: inline-block;
+  width: 100px;
+}
+.smallLogo{
+  height: 100px;
+}
+.baseTimer {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+.baseTimerCircle {
+  fill: none;
+  stroke: none;
+}
+.baseTimerPathElapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+.baseTimerLabel {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  color: #fff;
+}
+.baseTimerPathRemaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  stroke: currentColor;
+}
+.baseTimerSVG {
+  transform: scaleX(-1);
+}
+.baseTimerPathRemaining.light {
+  color: #fff;
+}
+.baseTimerPathRemaining.medium {
+  color: #74698d;
+}
+.baseTimerPathRemaining.dark {
+  color: #56487f;
+}
