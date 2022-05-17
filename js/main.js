@@ -54,7 +54,10 @@ document.getElementById('startTimer').addEventListener('click', startTimer)
 function onTimesUp() {
     clearInterval(timerInterval);
     timePassed = 0;
-    timeLeft = 
+    console.log(timePassed)
+    timeLeft = timeLimit;
+    console.log(timeLeft)
+    console.log(setRemainingPathColor(timeLeft))
     setRemainingPathColor(timeLeft);
 }
 
@@ -101,7 +104,17 @@ function setCircleDasharray() {
 function setRemainingPathColor(timeLeft) {
     const { alert, warning, info} = COLOR_CODES;
 
-    if(timeLeft <= alert.threshold) {
+    if(timeLeft > warning.threshold){
+        document
+            .getElementById("baseTimerPathRemaining")
+            .classList.remove(warning.color);
+        document
+            .getElementById("baseTimerPathRemaining")
+            .classList.remove(alert.color);
+        document
+            .getElementById("baseTimerPathRemaining")
+            .classList.add(info.color);
+    }else if(timeLeft <= alert.threshold) {
         document
             .getElementById("baseTimerPathRemaining")
             .classList.remove(warning.color);
